@@ -6,7 +6,7 @@ class Header extends Component {
         return(
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#" className="brand-logo">Keto App</a>
+                    <Link to="/" className="brand-logo">Keto App</Link>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><Link to="/signin">Sign In</Link></li>
                         <li><Link to="/signup">Sign Up </Link></li>
