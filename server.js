@@ -27,7 +27,7 @@ app.use('/', routes);
 var connectionString;
 
 
-mongoose.connect('mongodb://heroku_xx1t24b1:c75mgtit829o1aso66k2fo1cbp@ds123084.mlab.com:23084/heroku_xx1t24b1', {
+mongoose.connect('mongodb://localhost/keto', {
     useMongoClient: true
   });
 
