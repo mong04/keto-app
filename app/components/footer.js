@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class Footer extends Component {
     render() {
         return(
-            <footer class="page-footer">
-                <div class="footer-copyright">
-                    <div class="container">
+            <footer className="page-footer">
+                <div className="footer-copyright">
+                    <div className="container">
                         Footer Text
                     </div>
                 </div>
