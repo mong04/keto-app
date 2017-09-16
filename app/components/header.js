@@ -4,24 +4,15 @@ import { Link } from "react-router-dom";
 class Header extends Component {
     render() {
         return(
-            <div className="page-header" role="navigation">
-                <div className="container">
-                    <ul className="nav navbar-nav navbar-left">
-                    <Link className="navbar-brand title" to="/">Keto App</Link>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="#" className="brand-logo">Keto App</a>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        <li><Link to="/signin">Sign In</Link></li>
+                        <li><Link to="/signup">Sign Up </Link></li>
                     </ul>
-                    <div className="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul className="nav navbar-nav navbar-right">
-                            <li>
-                                <Link to="/search">Search</Link>
-                            </li>
-                            <li>
-                                <Link to="/saved">Profile</Link>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-            </div>
-                
+            </nav>     
         );
     }
 };
