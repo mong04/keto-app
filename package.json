@@ -9,19 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caseyrubel/React-Scraper.git"
+    "url": "git+https://github.com/mong04/keto-app"
   },
   "author": "Casey Rubel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/caseyrubel/React-Scraper/issues"
+    "url": "https://github.com/mong04/keto-app/issues"
   },
-  "homepage": "https://github.com/caseyrubel/React-Scraper#readme",
+  "homepage": "https://github.com/mong04/keto-app#readme",
   "dependencies": {
+    "auth0-js": "^8.10.0",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "express": "^4.15.4",
+    "express-jwt": "^5.3.0",
     "express-router": "0.0.1",
+    "jwks-rsa": "^1.2.0",
+    "jwt-decode": "^2.2.0",
     "moment": "^2.18.1",
     "mongoose": "^4.11.9",
     "react": "^15.6.1",
