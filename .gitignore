@@ -1,3 +1,4 @@
 node_modules
 .env
 public/bundle.js
+app/utils/auth0-variables.js
