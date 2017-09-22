@@ -15,8 +15,6 @@ var app = express();
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(path.join(__dirname, 'public')));
 
-var PORT = process.env.PORT || 3000;
-
 // Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -57,5 +55,5 @@ var port = process.env.PORT || 3000;
 
 
 app.listen(port, function() {
-  console.log("App running on port 3000!");
+  console.log(`App running on port ${port}!`);
 });
