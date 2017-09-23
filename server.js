@@ -34,7 +34,7 @@ app.use(express.static(__dirname + '/public'));
 var connectionString;
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/keto', {
+mongoose.connect(process.env.MONGOLAB_CYAN_URI || 'mongodb://localhost/keto', {
     useMongoClient: true
   });
 
