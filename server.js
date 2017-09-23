@@ -22,9 +22,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // Import routes and give the server access to them.
-var routes = require('./controllers/controller');
-app.use('/', routes);
-app.get('*', (req, res) => {
+// var routes = require('./controllers/controller');
+// app.use('/', routes);
+app.get('/*', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 })
 

@@ -1,11 +1,11 @@
 {
-  "name": "react-scraper",
+  "name": "keto-app",
   "version": "1.0.0",
-  "description": "React based scraper tool",
+  "description": "React based keto diet app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "webpack && node server.js"
   },
   "repository": {
     "type": "git",
