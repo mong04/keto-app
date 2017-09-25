@@ -20,7 +20,7 @@ class App extends Component {
       <nav>
         <div className="nav-wrapper">
             <a
-              href="#" 
+              style={{ cursor: 'pointer' }}
               className="brand-logo"
               onClick={this.goTo.bind(this, 'home')}
             >
@@ -46,6 +46,18 @@ class App extends Component {
                           >
                             Log Out
                           </a>
+                      )
+                    }
+                </li>
+                <li>
+                    {
+                      isAuthenticated() && (
+                        <a
+                          className="btn waves-effect waves-light"
+                          onClick={this.goTo.bind(this, 'profile')}
+                        >
+                          Profile
+                        </a>
                       )
                     }
                 </li>
