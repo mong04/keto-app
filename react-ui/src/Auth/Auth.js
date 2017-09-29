@@ -1,6 +1,6 @@
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
-import history from './history';
+import history from '../history';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
@@ -42,7 +42,9 @@ export default class Auth {
 
   setSession(authResult) {
     // Set the time that the access token will expire at
-    let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    let expiresAt = JSON.stringify(
+      authResult.expiresIn * 1000 + new Date().getTime()
+    );
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
@@ -74,6 +76,7 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    this.userProfile = null;
     // navigate to the home route
     history.replace('/home');
   }

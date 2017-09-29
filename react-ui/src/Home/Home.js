@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Info from './Children/Info';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   login() {
@@ -11,7 +11,11 @@ class Home extends Component {
       <div className="container">
         {
           isAuthenticated() && (
-              <Info />
+              <h4>
+                You are logged in! You can now view your{' '}
+                <Link to="profile">profile area</Link>
+                .
+              </h4>
             )
         }
         {

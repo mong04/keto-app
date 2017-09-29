@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-// import loading from '../images/loading.svg';
+import loading from './loading.svg';
 
 class Callback extends Component {
   render() {
     const style = {
-      position: 'relative',
+      position: 'absolute',
+      display: 'flex',
       justifyContent: 'center',
       height: '100vh',
       width: '100vw',
@@ -12,12 +13,12 @@ class Callback extends Component {
       bottom: 0,
       left: 0,
       right: 0,
-      marginLeft: '40%'
+      backgroundColor: 'white',
     }
 
     return (
       <div style={style}>
-        <img src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/09b24e31234507.564a1d23c07b4.gif' alt='Loading'/>
+        <img src={loading} alt="loading"/>
       </div>
     );
   }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Panel, ControlLabel, Glyphicon } from 'react-bootstrap';
+import './Profile.css';
 
 class Profile extends Component {
   componentWillMount() {
@@ -18,14 +20,14 @@ class Profile extends Component {
       <div className="container">
         <div className="profile-area">
           <h1>{profile.name}</h1>
-          <div className="card">
+          <Panel header="Profile">
             <img src={profile.picture} alt="profile" />
             <div>
-              <label htmlFor="nickname">Nickname</label>
-              <h3 id="nickname">{profile.nickname}</h3>
+              <ControlLabel><Glyphicon glyph="user" /> Nickname</ControlLabel>
+              <h3>{profile.nickname}</h3>
             </div>
             <pre>{JSON.stringify(profile, null, 2)}</pre>
-          </div>
+          </Panel>
         </div>
       </div>
     );
