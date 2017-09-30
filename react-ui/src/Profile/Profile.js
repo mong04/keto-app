@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import { Panel, ControlLabel, Glyphicon } from 'react-bootstrap';
 import './Profile.css';
+import axios from 'axios';
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      profile: {}
+    }
+  }
   componentWillMount() {
-    this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
+        axios.post('/api', {
+          userInfo: this.state.profile
+        }).then(function(res) {
+          console.log(res);
+        }).catch(function(err) {
+          console.log(err);
+        });
       });
     } else {
       this.setState({ profile: userProfile });
