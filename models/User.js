@@ -9,6 +9,22 @@ let UserSchema = new Schema({
         type: String,
         required: true,
         unique: true
+    },
+    calories: {
+        type: Number,
+        default: null
+    },
+    fat: {
+        type: Number,
+        default: null
+    },
+    protein: {
+        type: Number,
+        default: null
+    },
+    carbs: {
+        type: Number,
+        default: null
     }
 });
 

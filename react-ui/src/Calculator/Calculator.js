@@ -100,6 +100,7 @@ class Calculator extends Component {
     }
 
     render() {
+        const { isAuthenticated } = this.props.auth;
        return (
             <div className="container">
                 <div className="calculator-area">
@@ -124,7 +125,7 @@ class Calculator extends Component {
                             >
                             <ControlLabel>Weight in lbs</ControlLabel>
                                 <FormControl
-                                    type="text"
+                                    type="number"
                                     id="weight"
                                     value={this.state.weight}
                                     onChange={this.handleChange}
@@ -135,7 +136,7 @@ class Calculator extends Component {
                             >
                             <ControlLabel>Height in inches</ControlLabel>
                                 <FormControl
-                                    type="text"
+                                    type="number"
                                     id="height"
                                     value={this.state.height}
                                     onChange={this.handleChange}
@@ -146,7 +147,7 @@ class Calculator extends Component {
                             >
                             <ControlLabel>Age</ControlLabel>
                                 <FormControl
-                                    type="text"
+                                    type="number"
                                     id="age"
                                     value={this.state.age}
                                     onChange={this.handleChange}
@@ -157,7 +158,7 @@ class Calculator extends Component {
                             >
                             <ControlLabel>Body Fat %</ControlLabel>
                                 <FormControl
-                                    type="text"
+                                    type="number"
                                     id="bf"
                                     value={this.state.bf}
                                     onChange={this.handleChange}
@@ -192,28 +193,26 @@ class Calculator extends Component {
                                 <FormControl.Static>
                                     { this.getTDEE(this.getBMR()) } Calories
                                 </FormControl.Static>
-                                <ControlLabel>Your Reccommended Daily Caloric Intake Is:</ControlLabel>
+                                <ControlLabel>Your Recommended Daily Intake For Fat Loss Is:</ControlLabel>
                                 <FormControl.Static>
-                                    { this.getCaloricDeficit() } Calories
-                                </FormControl.Static>
-                                <ControlLabel>Your Reccommended Daily Protein Intake Is:</ControlLabel>
-                                <FormControl.Static>
-                                    { this.getProtein() } Grams
-                                </FormControl.Static>
-                                <ControlLabel>Your Reccommended Daily Fat Intake Is:</ControlLabel>
-                                <FormControl.Static>
-                                    { this.getFat() } Grams
-                                </FormControl.Static>
-                                <ControlLabel>Your Reccommended Daily Carb Intake Is:</ControlLabel>
-                                <FormControl.Static>
-                                    Up to 25 Grams Net Carbs (Total Carbs Minus Fiber)
+                                    <b>{ this.getCaloricDeficit() }</b> Calories
+                                    <br/>
+                                    <b>{ this.getProtein() }</b> Grams of Protein
+                                    <br/>
+                                    <b>{ this.getFat() }</b> Grams of Fat
+                                    <br/>
+                                    <b>Up to 25 Grams Net Carbs</b> (Total Carbs Minus Fiber)
                                 </FormControl.Static>
                                 <hr/>
-                                <Button
-                                    bsStyle="primary"
-                                >
-                                    Save
-                                </Button>
+                                {
+                                    isAuthenticated() && (
+                                        <Button
+                                            bsStyle="primary"
+                                        >
+                                            Save
+                                        </Button>
+                                    )
+                                }
                         </FormGroup>
                     </Panel>
                 </div>

@@ -30,7 +30,7 @@ export const makeMainRoutes = () => {
               <Profile auth={auth} {...props} />
             )
           )} />
-          <Route path="/calculator" component={Calculator}/>
+          <Route path="/calculator" render={(props) => <Calculator auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 
