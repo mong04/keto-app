@@ -69,6 +69,31 @@ app.post('/api', function(req, res) {
   })
 });
 
+app.post('/api/update', function(req, res) {
+  const package = req.body;
+  console.log(req.body.userInfo.email);
+  var updateUser = {};
+  updateUser.email = package.userInfo.email;
+  updateUser.calories = package.calories;
+  updateUser.fat = package.fat;
+  updateUser.protein = package.protein;
+  updateUser.carbs = 25;
+package
+  User.findOneAndUpdate(
+    {email: updateUser.email}, 
+    {calories: updateUser.calories, 
+      fat: updateUser.fat, 
+      protein: updateUser.protein, 
+      carbs: updateUser.carbs},(err, doc) => {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          // console.log(doc);
+        }
+      })
+})
+
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', function(request, response) {
   response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));

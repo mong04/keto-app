@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Panel, FormGroup, Radio, FormControl, ControlLabel, Button } from 'react-bootstrap';
+import axios from 'axios'
 
 class Calculator extends Component {
     constructor(props) {
@@ -20,6 +21,28 @@ class Calculator extends Component {
         this.getProtein = this.getProtein.bind(this);
         this.getCaloricDeficit = this.getCaloricDeficit.bind(this);
         this.getFat = this.getFat.bind(this);
+        this.onSave = this.onSave.bind(this);
+    }
+
+    onSave() {
+        const { userProfile, getProfile } = this.props.auth;
+        if (!userProfile) {
+            getProfile((err, profile) => {
+                this.setState({ profile });
+                axios.post('/api/update', {
+                    userInfo: this.state.profile,
+                    calories: this.getCaloricDeficit(),
+                    protein: this.getProtein(),
+                    fat: this.getFat()
+                }).then(function(res) {
+                    console.log(res);
+                }).catch(function(err) {
+                    console.log(err);
+                });
+            });
+        } else {
+            this.setState({ profile: userProfile });
+        }
     }
 
     weightValidation() {
@@ -207,6 +230,7 @@ class Calculator extends Component {
                                 {
                                     isAuthenticated() && (
                                         <Button
+                                            onClick={() => this.onSave()}
                                             bsStyle="primary"
                                         >
                                             Save
