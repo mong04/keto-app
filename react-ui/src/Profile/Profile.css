@@ -6,3 +6,8 @@
 .panel-body h3 {
   margin-top: 0;
 }
+
+h5 {
+  text-align: center;
+  text-decoration: underline;
+}
