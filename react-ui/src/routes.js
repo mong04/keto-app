@@ -6,7 +6,8 @@ import Profile from './Profile/Profile';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
-import API from './API/API'
+import Calculator from './Calculator/Calculator'
+
 
 const auth = new Auth();
 
@@ -29,7 +30,7 @@ export const makeMainRoutes = () => {
               <Profile auth={auth} {...props} />
             )
           )} />
-          <Route path="/cities" component={API}/>
+          <Route path="/calculator" component={Calculator}/>
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} /> 
