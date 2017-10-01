@@ -1,32 +1,30 @@
-// User model to store information about our users
-
 // Require Mongoose
 const mongoose = require('mongoose');
-// Create Schema class
+// Create Schema Class
 const Schema = mongoose.Schema;
 
 // Create User Schema
 let UserSchema = new Schema({
-    firstName: {
-        type: String,
-        required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
-        required: true
-    },
-    stats: [{
-        type: Schema.Types.ObjectId,
-        ref: "Stats"
-    }],
-    signUpDate: {
-        type: Date,
         required: true,
-        default: Date.now
+        unique: true
+    },
+    calories: {
+        type: Number,
+        default: null
+    },
+    fat: {
+        type: Number,
+        default: null
+    },
+    protein: {
+        type: Number,
+        default: null
+    },
+    carbs: {
+        type: Number,
+        default: null
     }
 });
 
