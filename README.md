@@ -1,7 +1,7 @@
 
-# NYT React app
+# KetoSystem
 
-Link to the deployed Heroku application: https://calm-coast-21279.herokuapp.com
+Link to the deployed Heroku application: https://kdiet.herokuapp.com/home
 
 
 ## Description
