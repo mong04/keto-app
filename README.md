@@ -17,7 +17,7 @@ All of the data in this app persists through the MongoLab database heroku add-on
 #### Demo
 ***
 
-![Alt Text](https://thumbs.gfycat.com/brilliantthiscrane-size_restricted.gif)
+![Alt Text](https://thumbs.gfycat.com/BrilliantThisCrane-size_restricted.gif)
 https://gfycat.com/brilliantthiscrane
 
 #### Contributors:
