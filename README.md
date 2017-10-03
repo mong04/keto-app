@@ -23,8 +23,8 @@ https://gfycat.com/brilliantthiscrane
 #### Contributors:
 ***
 
-Casey Rubel [GitHub](https://github.com/caseyrubel)
-Andrew Sanchez [GitHub](https://github.com/mong04)
+* Casey Rubel [GitHub](https://github.com/caseyrubel)
+* Andrew Sanchez [GitHub](https://github.com/mong04)
 
 
 #### Technologies Used:
